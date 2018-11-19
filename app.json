@@ -1,0 +1,20 @@
+{
+  "pages":[
+    "pages/job/jobFairListPage",
+    "pages/job/loginPage",
+    "pages/job/green",
+    "pages/job/red",
+    "pages/job/listPage",
+    "pages/job/saoIndex",
+    "pages/job/detailPage",
+    "pages/job/saoQyIndex",
+    "pages/job/greenQy",
+    "pages/job/redQy"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "吉林省智慧就业平台",
+    "navigationBarTextStyle":"black"
+  }
+}

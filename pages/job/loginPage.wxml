@@ -1,0 +1,12 @@
+<view class="containers">
+  <view class='logoTu'>
+    <image src='../img/logos.jpg' class='logoTu' mode='scaleToFill'></image>
+  </view>
+          
+          <view class='xuehao'>
+              <view class='xueT'>
+                <input placeholder="请输入密码" bindinput='passWdInput' password="true" name="password" auto-focus/>       
+              </view>
+          </view>
+          <button class='btnC'  bindtap="onSave">登 录</button>
+</view>

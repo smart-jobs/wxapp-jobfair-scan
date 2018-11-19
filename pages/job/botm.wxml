@@ -1,0 +1,11 @@
+ <view class='botm'>
+    <view class='botmLeft' bindtap="onIndex">
+    <view wx:if="{{botmtype == 1}}"><image class='diT' src='../img/ind.jpg' mode='scaleToFill'></image></view>
+    <view wx:else><image class='diT' src='../img/ind2.jpg' mode='scaleToFill'></image></view>
+    </view>
+    <view class='botmLeft' bindtap="onJobInList">
+    <view wx:if="{{botmtype == 2}}"><image class='diT' src='../img/qy.jpg' mode='scaleToFill'></image></view>
+    <view wx:else><image class='diT' src='../img/qy2.jpg' mode='scaleToFill'></image></view>
+      
+    </view>
+  </view>

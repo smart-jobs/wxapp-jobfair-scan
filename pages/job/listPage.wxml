@@ -1,0 +1,28 @@
+<view class="containers">
+
+  <view class="loginTop">
+    入场记录
+  </view>
+
+  <view class='list' wx:key="unique" wx:for="{{jobInList}}" wx:for-item="jobIn">
+       <view bindtap="onDetail">
+       <view class='name'>姓名：<span>{{jobIn.name}}</span></view>
+       <view class='name'>学号：<span>{{jobIn.login_id}}</span></view>
+       <view class='name'>学校名称：<span>{{jobIn.school}}</span></view>
+       <view class='name'>招聘会名称：<span>{{jobIn.title}}</span></view>
+       <view class='name'>入场时间：<span>{{jobIn.in_date}}</span></view>
+       <view class='name' wx:if="{{jobIn.status == 2}}">状态：<span>已入场</span></view>
+       <view class='name' wx:else>状态：<span>未入场</span></view>
+      </view>
+  </view>
+  
+
+
+  
+  
+
+          
+
+        
+</view>
+<include src="./botm.wxml"/>

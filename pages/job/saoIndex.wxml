@@ -1,0 +1,9 @@
+<view class="containers">
+  <view class='logoTu'>
+    <image src='../img/logos.jpg' class='logoTu' mode='scaleToFill'></image>
+  </view>
+  <image bindtap="onSao" class='sao' src='../img/saoTwo.png' mode='scaleToFill'></image>
+
+
+</view>
+<include src="./botm.wxml"/>
