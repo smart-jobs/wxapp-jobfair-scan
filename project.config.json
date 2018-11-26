@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
 	"appid": "wx06fce7d7098a1f2a",
-	"projectname": "wxjobverify",
+	"projectname": "wxapp-jobfair-scan",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
