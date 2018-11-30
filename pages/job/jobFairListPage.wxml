@@ -3,10 +3,13 @@
   <view class="loginTop">
     招聘会
   </view>
-
-  <view class='list' wx:key="unique" wx:for="{{jobFairList}}" wx:for-item="jobFair">
-      <view bindtap="onDetail" id="{{jobFair._id}}">
-        <view class='name'>招聘会名称：<span>{{jobFair.subject}}</span></view>
-      </view>
-  </view>     
+	
+	<view wx:if='{{listshow > 0}}'>
+		<view class='list' wx:key="unique" wx:for="{{jobFairList}}" wx:for-item="jobFair">
+				<view bindtap="onDetail" id="{{jobFair._id}}">
+					<view class='name'>招聘会名称：<span>{{jobFair.subject}}</span></view>
+				</view>
+		</view> 
+	</view>
+	<view class="listhide" wx:else>当前没有招聘会</view>
 </view>
