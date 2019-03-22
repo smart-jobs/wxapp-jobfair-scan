@@ -23,6 +23,9 @@ Page({
 		this.setData({
 			botmtype: options.botmtype
 		});
+		wx.setKeepScreenOn({
+			keepScreenOn: true
+		})
 		wx.getSetting({
 			success(res) {
 				console.log(res)
@@ -65,7 +68,7 @@ Page({
 							device: app.globalData.openId
 						}
 						wx.request({
-							url: app.globalData.contentpath + 'weixin/api/jobs/jobfair/ticket/verify?ticket_id=' + res.detail.result, //仅为示例
+							url: app.globalData.contentpath + 'weixin/api/jobs/jobfair/ticket/verify?ticket_id=' + res.detail.result,
 							data: newData,
 							header: {
 								'content-type': 'application/json' // 默认值
