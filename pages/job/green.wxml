@@ -1,26 +1,17 @@
 <view class="containers" id='body'>
-
-  <view class='red'>
-    <image class='no' src='../img/yes.png' mode='scaleToFill'></image>
-    <view class='name'>姓名：<span>{{name}}!</span></view>
-    <image  bindtap="onSao" class='sao' src='../img/sao.png' mode='scaleToFill'></image>
-  </view>
-
-  
-
-  
-  
-  
-  
-  
-
-
-  
-  
-
-          
-
-        
+	<camera class="camera a1" device-position="back" flash="off" mode="scanCode" bindscancode="success">
+		<cover-image src="../img/a1.png"></cover-image>
+		<cover-image src="../img/a2.png" class="a2" style="top:{{z+'px'}}"></cover-image>
+	</camera>
+	<!-- <canvas class="mycanvas" canvas-id="mycanvas"></canvas> -->
+	<view class="txtbody">
+		<view class="txt" wx:key="index" wx:for="{{list}}" wx:for-item="itema" style="color:{{itema.color}}">
+			<text class="type">{{itema.arr}}</text>
+			<text class="nameb">{{itema.name}}</text>
+			<text class="namea">{{itema.date}}</text>
+		</view>
+	</view>
+	<audio src="https://www.xn--r70ao03d.com/music/1543302153403.mp3" id="myAudio"></audio>
 </view>
 <include src="./botm.wxml"/>
 

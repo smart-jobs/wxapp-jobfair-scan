@@ -8,7 +8,7 @@ Page({
   data: {
     userid:'',
     jobId:'',
-    botmtype:''
+    botmtype: 1
   },
 
   /**
@@ -73,53 +73,85 @@ Page({
    * 点击扫一扫
    */
   onSao: function () {
-    console.log("sao")
-    // 只允许从相机扫码
-    wx.scanCode({
-      onlyFromCamera: true,
-      success(res) {
-        console.log("1234"+res.result)
-        let newData = {
-          ticket_id: res.result,
-          device: app.globalData.openId
-        }
-        wx.request({
-          url: app.globalData.contentpath + 'weixin/api/jobs/jobfair/ticket/verify?ticket_id=' + res.result, //仅为示例
-          data: newData,
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          method: "POST",
-          success(res) {
-            console.log(res.data)
-            if (res.data.errcode == 0) {
-              wx.navigateTo({
-                url: '/pages/job/green?botmtype=1&name=' + res.data.data.user.name // 希望跳转过去的页面
-              })
-            } else{
-              wx.navigateTo({
-                url: '/pages/job/red?botmtype=1&errmsg=' + res.data.errmsg // 希望跳转过去的页面
-              })
-            }
-          }
-        })
-      }
-    })
+		let botmtype = this.data.botmtype
+		console.log(botmtype)
+		wx.navigateTo({
+			url: '/pages/job/green?botmtype='+botmtype // 希望跳转过去的页面
+		})
+// 		console.log(this.data.bottype)
+//     // 只允许从相机扫码
+// 		if (this.data.bottype == 0) {
+// 			 wx.scanCode({
+// 				onlyFromCamera: true,
+// 				success(res) {
+// 					let newData = {
+// 						ticket_id: res.result,
+// 						device: app.globalData.openId
+// 					}
+// 					wx.request({
+// 						url: app.globalData.contentpath + 'weixin/api/jobs/jobfair/ticket/verify?ticket_id=' + res.result, //仅为示例
+// 						data: newData,
+// 						header: {
+// 							'content-type': 'application/json' // 默认值
+// 						},
+// 						method: "POST",
+// 						success(res) {
+// 							console.log(res.data)
+// 							if (res.data.errcode == 0) {
+// // 								wx.navigateTo({
+// // 									url: '/pages/job/green?botmtype=1&errmsg=0&name=' + res.data.data.user.name // 希望跳转过去的页面
+// // 								})
+// 							} else{
+// // 								wx.navigateTo({
+// // 									url: '/pages/job/green?botmtype=2&errmsg=-1&name='+'' // 希望跳转过去的页面
+// // 								})
+// 							}
+// 						}
+// 					})
+// 				}
+// 			})
+// 		}else {
+// 			wx.scanCode({
+// 				onlyFromCamera: true,
+// 				success(res) {
+// 					console.log("1234" + res.result)
+// 					let newData = {
+// 						device: app.globalData.openId
+// 					}
+// 					wx.request({
+// 						url: app.globalData.contentpath + 'weixin/api/jobs/jobfair/corp/checkin?fair_id=' + app.globalData.fairId + '&corpid=' + res.result + '&device=' + app.globalData.openId, //仅为示例
+// 						data: newData,
+// 						header: {
+// 							'content-type': 'application/json' // 默认值
+// 						},
+// 						method: "POST",
+// 						success(res) {
+// 							console.log(res.data)
+// 							if (res.data.errcode == 0) {
+// // 								wx.navigateTo({
+// // 									url: '/pages/job/green?botmtype=2&errmsg=0&name=' + res.data.data.corpname // 希望跳转过去的页面
+// // 								})
+// 							} else {
+// // 								wx.navigateTo({
+// // 									url: '/pages/job/green?botmtype=2&errmsg=-1&name='+'' // 希望跳转过去的页面
+// // 								})
+// 							}
+// 						}
+// 					})
+// 				}
+// 			})
+// 		}
   },
-  /**
-   * 用户点击右上角分享
-   */
+	// 个人
   onIndex: function () {
-    wx.navigateTo({
-      url: '/pages/job/saoIndex?botmtype=1' // 希望跳转过去的页面
-    })
+		this.setData({
+			botmtype: 1
+		})
   },
-  /**
-   * 用户点击右上角分享
-   */
+	// 企业
   onJobInList: function () {
-    wx.navigateTo({
-      url: '/pages/job/saoQyIndex?botmtype=2' // 希望跳转过去的页面
-    })
+		this.setData({
+			botmtype: 2
+		})
   }
 })

@@ -108,3 +108,19 @@ display: -webkit-box;
   width: 96.25rpx;
   height: 62.5rpx;
 }
+
+
+/*新加*/
+.listhide{
+	width: 88%;
+	padding: 4% 4% 2% 4%;
+	margin-left: 2%;
+	margin-right: 2%;
+	height: 100rpx;
+	margin-top: 2%;
+	background: #fff;
+	text-align: center;
+	font-size: 0.8em;
+	color: #999;
+	line-height: 100rpx;
+}

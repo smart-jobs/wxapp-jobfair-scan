@@ -3,13 +3,7 @@
     "pages/job/jobFairListPage",
     "pages/job/loginPage",
     "pages/job/green",
-    "pages/job/red",
-    "pages/job/listPage",
-    "pages/job/saoIndex",
-    "pages/job/detailPage",
-    "pages/job/saoQyIndex",
-    "pages/job/greenQy",
-    "pages/job/redQy"
+    "pages/job/saoIndex"
   ],
   "window":{
     "backgroundTextStyle":"light",
