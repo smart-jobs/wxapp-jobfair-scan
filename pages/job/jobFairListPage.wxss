@@ -72,6 +72,11 @@ display: -webkit-box;
 -webkit-box-orient: vertical;
   
 }
+.info {
+  text-align: center;
+  padding: 10px;
+  color: gray;
+}
 
 
 

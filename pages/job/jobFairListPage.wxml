@@ -3,7 +3,6 @@
   <view class="loginTop">
     招聘会
   </view>
-	
 	<view wx:if='{{listshow > 0}}'>
 		<view class='list' wx:key="unique" wx:for="{{jobFairList}}" wx:for-item="jobFair">
 				<view bindtap="onDetail" id="{{jobFair._id}}">
