@@ -9,4 +9,7 @@
         <view class='name'>招聘会名称：<span>{{jobFair.subject}}</span></view>
       </view>
   </view>     
+  <view class='info' wx:if="{{ loaded && jobFairList.length == 0 }}">
+    <span>当日没有招聘会</span>
+  </view>     
 </view>

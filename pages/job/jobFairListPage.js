@@ -9,7 +9,8 @@ Page({
     jobFairList: [],
     pageNum: 0,
     pageSize: 5,
-    hasMoreData: true
+    hasMoreData: true,
+    loaded: false,
   },
 
   /**
@@ -85,6 +86,7 @@ Page({
       success(res) {
         console.log(res)
         if (res.data.errcode == '0') {
+          that.setData({loaded: true});
           console.log(res.data.data)
           if (that.data.pageNum >= res.data.pageCount) {
             that.setData({
